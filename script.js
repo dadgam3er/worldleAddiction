@@ -15367,7 +15367,7 @@ function deleteKey() {
 function submitGuess() {
   const activeTiles = [...getActiveTiles()]
   if (activeTiles.length !== WORD_LENGTH) {
-    showAlert("Not enough letters")
+    showAlert("Not enough letters, Sara")
     shakeTiles(activeTiles)
     return
   }
@@ -15377,7 +15377,7 @@ function submitGuess() {
   }, "")
 
   if (!dictionary.includes(guess)) {
-    showAlert("Not in word list")
+    showAlert("Not in dictionary")
     shakeTiles(activeTiles)
     return
   }
@@ -15457,7 +15457,7 @@ function shakeTiles(tiles) {
 
 function checkWinLose(guess, tiles) {
   if (guess === targetWord) {
-    showAlert("You Win", 5000)
+    showAlert("Congratulations Sara, You win!", 5000)
     danceTiles(tiles)
     stopInteraction()
     return
